@@ -204,6 +204,10 @@ input {
     background: #9FE8DF;
 }
 
+.reset.active {
+    background: #9FE8DF;
+}
+
 @media screen and (max-width: 1024px) {
     body{
         padding: 0;

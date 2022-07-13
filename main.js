@@ -24,7 +24,9 @@ function calculateTip() {
     if(bill === 0 || people === 0){
         tipTotal.innerHTML = '$0.00';
         total.innerHTML = '$0.00';
+        reset.classList.add("active")
     }else{
+        reset.classList.remove("active");
         tipTotal.innerHTML = `$${(bill / people * percent / 100).toFixed(2)}`
         total.innerHTML = `$${((bill / people + bill / people * percent / 100)).toFixed(2)}`
     }   
@@ -47,3 +49,4 @@ function calculateTipCustom() {
 function removeActive() {
     tip.forEach(n => n.classList.remove("active"));
 }
+
