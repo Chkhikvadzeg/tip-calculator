@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="calculator-left">
+      <div class="calculator-left-item">
+        <h3 class="title title--green">Bill</h3>
+        <div class="bill">
+          <span class="currency"><img src="./images/icon-dollar.svg" alt="Dollar Icon"></span>
+          <input onkeydown="calculateTip()" class="bill-total" type="number" name="bill" id="bill" placeholder="0">
+        </div>
+      </div>
+      <div class="calculator-left-item">
+        <h3 class="title title--green">Tip</h3>
+        <div class="tip">
+          <button class="tip-item">5%</button>
+          <button class="tip-item">10%</button>
+          <button class="tip-item active">15%</button>
+          <button class="tip-item">25%</button>
+          <button class="tip-item">50%</button>
+          <button onkeydown="calculateTipCustom()" onclick="removeActive()" class="tip--custom"><input type="number" name="custom" id="custom" placeholder="Custom"></button>
+        </div>
+      </div>
+      <div class="calculator-left-item">
+        <h3 class="title title--green">Number Of People</h3>
+        <div class="bill">
+          <span class="currency"><img src="./images/icon-person.svg" alt="Person Icon"></span>
+          <input onkeydown="calculateTip()" class="bill-total" type="number" min="1" name="people" id="people" placeholder="0">
+        </div>
+      </div>
+    </div>
+    <div class="calculator-right">
+      <div class="calculator-right-top">
+        <div class="calculator-right-top-item">
+          <div>
+            <h3 class="title title--white">Tip Amount</h3>
+            <span class="person">/ Person</span>
+          </div>
+          <span class="tip-total">$0.00</span>
+        </div>
+        <div class="calculator-right-top-item">
+          <div>
+            <h3 class="title title--white">Total</h3>
+            <span class="person">/ Person</span>
+          </div>
+          <span class="total">$0.00</span>
+        </div>
+      </div>
+      <input class="reset" type="reset" value="reset">
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
