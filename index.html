@@ -14,7 +14,8 @@
         <h3 class="title title--green">Bill</h3>
         <div class="bill">
           <span class="currency"><img src="./images/icon-dollar.svg" alt="Dollar Icon"></span>
-          <input onkeydown="calculateTip()" class="bill-total" type="number" name="bill" id="bill" placeholder="0">
+          <input oninput="calculateTip()" class="bill-total" type="number" name="bill" id="bill" placeholder="0">
+          <span class="bill-error">Bill can't be more than 10000</span>
         </div>
       </div>
       <div class="calculator-left-item">
@@ -22,17 +23,20 @@
         <div class="tip">
           <button class="tip-item">5%</button>
           <button class="tip-item">10%</button>
-          <button class="tip-item active">15%</button>
+          <button class="tip-item">15%</button>
           <button class="tip-item">25%</button>
           <button class="tip-item">50%</button>
-          <button onkeydown="calculateTipCustom()" onclick="removeActive()" class="tip--custom"><input type="number" name="custom" id="custom" placeholder="Custom"></button>
+          <button oninput="calculateTipCustom()" onclick="removeActive()" class="tip--custom"><input type="number" name="custom" id="custom" placeholder="Custom" min="1" max="100"></button>
         </div>
       </div>
       <div class="calculator-left-item">
-        <h3 class="title title--green">Number Of People</h3>
+        <div class="people-error-container">
+          <h3 class="title title--green">Number Of People</h3>
+          <span class="error-message">Can't be zero</span>
+        </div>
         <div class="bill">
           <span class="currency"><img src="./images/icon-person.svg" alt="Person Icon"></span>
-          <input onkeydown="calculateTip()" class="bill-total" type="number" min="1" name="people" id="people" placeholder="0">
+          <input oninput="calculateTip()" class="bill-total" type="number" min="1" name="people" id="people" placeholder="0">
         </div>
       </div>
     </div>
@@ -53,7 +57,7 @@
           <span class="total">$0.00</span>
         </div>
       </div>
-      <input class="reset" type="reset" value="reset">
+      <input class="reset active" type="reset" value="reset">
     </div>
   </div>
   <script src="./main.js"></script>

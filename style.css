@@ -56,6 +56,29 @@ input {
 }
 
 .bill {
+    position: relative;
+}
+
+.bill-error {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -150%);
+    font-size: 12px;
+    white-space: nowrap;
+    color: #E17457;
+    display: none;
+}
+
+.bill.error .bill-error {
+    display: block;
+}
+
+.bill.error #bill {
+    border: 2px solid #E17457;
+}
+
+.bill {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -95,6 +118,18 @@ input {
     font-size: 24px;
     opacity: 1;
     border: 0;
+    position: relative;
+}
+
+.tip--custom.error::after {
+    content: 'Type less than 100';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 150%);
+    font-size: 12px;
+    white-space: nowrap;
+    color: #E17457;
 }
 
 .tip--custom:focus {
@@ -115,6 +150,7 @@ input {
     color: #547878;
     font-size: 24px;
     opacity: 1;
+    cursor: pointer;
 }
 
 #custom:focus {
@@ -182,6 +218,29 @@ input {
     color: #26C2AE;
     font-size: 48px;
     letter-spacing: -1px;
+}
+
+.people-error-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-message {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #E17457;
+    display: none;
+}
+
+#people.error {
+    border: 2px solid #E17457;
+}
+
+.error-message.error {
+    display: block;
 }
 
 .calculator-right-top-item:not(:last-child) {
